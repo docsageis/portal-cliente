@@ -2,7 +2,7 @@
 // CONFIGURAÇÃO
 //==================================================
 
-const URL_API = "const API_URL = "https://worker-portal.docsageis.workers.dev";
+const URL_API = "https://worker-portal.docsageis.workers.dev";
 
 //==================================================
 // INÍCIO
