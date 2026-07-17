@@ -24,7 +24,12 @@ async function iniciarPortal() {
         configurarEventos();
 
         if ((dados.aceite || "").toUpperCase() === "ACEITO") {
-            mostrarSucesso("Esta assinatura já foi realizada.");
+
+            document.getElementById("areaAceite").style.display = "none";
+
+            mostrarSucesso("Esta assinatura já foi realizada anteriormente."
+            );
+
         }
 
     } catch (e) {
@@ -106,6 +111,7 @@ async function realizarAceite() {
         if (!json.ok) throw new Error(json.mensagem || "Erro ao registrar aceite.");
 
         document.getElementById("statusAceite").textContent = "ACEITO";
+        document.getElementById("statusAceite").style.color = "#16A34A";
         mostrarSucesso("Aceite realizado com sucesso.");
 
     } catch (e) {
@@ -115,9 +121,24 @@ async function realizarAceite() {
     }
 }
 
-function mostrarSucesso(msg) {
-    document.getElementById("areaAceite").innerHTML =
-        `<div class="sucesso"><h2>✅ ${msg}</h2><p>Obrigado. Sua assinatura foi registrada.</p></div>`;
+function mostrarSucesso(msg){
+
+    document.getElementById("areaAceite").innerHTML = `
+        <div class="sucesso">
+
+            <h2>${msg}</h2>
+
+            <p>
+                Sua assinatura eletrônica foi registrada com sucesso.
+            </p>
+
+            <p>
+                Não é necessária nenhuma outra ação.
+            </p>
+
+        </div>
+    `;
+
 }
 
 function mostrarErro(msg) {
