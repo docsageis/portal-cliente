@@ -2,7 +2,7 @@
 // CONFIGURAÇÃO
 //==================================================
 
-const URL_API = "https://script.google.com/macros/s/AKfycbzNz1xNKdLNLkySIBy2QYEGSkdk6YOeiYUeKoL_wXjElbtLSGDsduJtG_1v_q3PCKBW/exec";
+const URL_API = "const API_URL = "https://worker-portal.docsageis.workers.dev";
 
 //==================================================
 // INÍCIO
