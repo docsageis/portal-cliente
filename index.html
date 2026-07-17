@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Portal do Cliente | DocsÁgeis</title>
+
+    <meta name="description" content="Portal de Aceite dos Documentos - DocsÁgeis">
+
+    <link rel="icon" href="assets/images/favicon.ico">
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <main class="container">
+
+        <section class="card">
+
+            <!-- LOGO -->
+            <header class="topo">
+
+                <img
+                    src="assets/images/logo-horizontal.png"
+                    alt="DocsÁgeis"
+                    class="logo">
+
+                <h1>Portal do Cliente</h1>
+
+                <p class="subtitulo">
+
+                    Assinatura eletrônica dos documentos.
+
+                </p>
+
+            </header>
+
+            <!-- LOADING -->
+            <section id="loading">
+
+                <div class="loader"></div>
+
+                <p>Carregando informações...</p>
+
+            </section>
+
+            <!-- ERROS -->
+            <section id="erro" class="hidden">
+
+                <h2>Não foi possível abrir o Portal.</h2>
+
+                <p id="mensagemErro"></p>
+
+            </section>
+
+            <!-- DADOS -->
+            <section id="conteudo" class="hidden">
+
+                <div class="grupo">
+
+                    <label>Cliente</label>
+                    <span id="cliente"></span>
+
+                </div>
+
+                <div class="grupo">
+
+                    <label>CPF / CNPJ</label>
+                    <span id="cpfCnpj"></span>
+
+                </div>
+
+                <div class="grupo dupla">
+
+                    <div>
+
+                        <label>Plano</label>
+                        <span id="plano"></span>
+
+                    </div>
+
+                    <div>
+
+                        <label>Pacote</label>
+                        <span id="pacote"></span>
+
+                    </div>
+
+                </div>
+
+                <div class="grupo">
+
+                    <label>Versão dos Documentos</label>
+                    <span id="versao"></span>
+
+                </div>
+
+                <div class="grupo">
+
+                    <label>Status</label>
+                    <span id="statusAceite"></span>
+
+                </div>
+
+                <hr>
+
+                <div id="areaAceite">
+
+                    <!-- próxima etapa -->
+
+                </div>
+
+            </section>
+
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

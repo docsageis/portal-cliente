@@ -1,0 +1,319 @@
+/*==================================================
+  RESET
+==================================================*/
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family: "Manrope", sans-serif;
+    background:#f4f8fc;
+    color:#233244;
+}
+
+/*==================================================
+  CONTAINER
+==================================================*/
+
+.container{
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:40px 20px;
+
+}
+
+/*==================================================
+  CARD
+==================================================*/
+
+.card{
+
+    width:100%;
+    max-width:760px;
+
+    background:#ffffff;
+
+    border-radius:18px;
+
+    padding:45px;
+
+    box-shadow:
+        0 12px 35px rgba(0,0,0,.08);
+
+}
+
+/*==================================================
+  TOPO
+==================================================*/
+
+.topo{
+
+    text-align:center;
+
+    margin-bottom:35px;
+
+}
+
+.logo{
+
+    width:260px;
+
+    max-width:100%;
+
+    margin-bottom:25px;
+
+}
+
+.topo h1{
+
+    font-size:30px;
+
+    color:#1769c5;
+
+    margin-bottom:10px;
+
+}
+
+.subtitulo{
+
+    color:#66778a;
+
+    font-size:16px;
+
+    line-height:24px;
+
+}
+
+/*==================================================
+  LOADING
+==================================================*/
+
+#loading{
+
+    text-align:center;
+
+    padding:40px;
+
+}
+
+.loader{
+
+    width:54px;
+
+    height:54px;
+
+    border-radius:50%;
+
+    border:5px solid #dbe9fb;
+
+    border-top-color:#2b83ea;
+
+    margin:0 auto 25px;
+
+    animation:girar .8s linear infinite;
+
+}
+
+@keyframes girar{
+
+    from{
+        transform:rotate(0deg);
+    }
+
+    to{
+        transform:rotate(360deg);
+    }
+
+}
+
+/*==================================================
+  DADOS
+==================================================*/
+
+.grupo{
+
+    margin-bottom:22px;
+
+}
+
+.grupo label{
+
+    display:block;
+
+    font-size:13px;
+
+    color:#7b8898;
+
+    margin-bottom:6px;
+
+    font-weight:600;
+
+}
+
+.grupo span{
+
+    display:block;
+
+    font-size:17px;
+
+    color:#233244;
+
+    font-weight:500;
+
+}
+
+.dupla{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:30px;
+
+}
+
+/*==================================================
+  STATUS
+==================================================*/
+
+#statusAceite{
+
+    font-weight:700;
+
+    color:#1769c5;
+
+}
+
+/*==================================================
+  ERRO
+==================================================*/
+
+#erro{
+
+    text-align:center;
+
+}
+
+#erro h2{
+
+    color:#d32f2f;
+
+    margin-bottom:18px;
+
+}
+
+#mensagemErro{
+
+    color:#666;
+
+    line-height:24px;
+
+}
+
+/*==================================================
+  ÁREA DE ACEITE
+==================================================*/
+
+#areaAceite{
+
+    margin-top:35px;
+
+}
+
+/*==================================================
+  UTILITÁRIOS
+==================================================*/
+
+.hidden{
+
+    display:none;
+
+}
+
+hr{
+
+    border:none;
+
+    border-top:1px solid #e6edf5;
+
+    margin:35px 0;
+
+}
+
+/*==================================================
+  RESPONSIVO
+==================================================*/
+
+@media(max-width:768px){
+
+    .card{
+
+        padding:30px;
+
+    }
+
+    .dupla{
+
+        grid-template-columns:1fr;
+
+        gap:22px;
+
+    }
+
+    .logo{
+
+        width:210px;
+
+    }
+
+    .topo h1{
+
+        font-size:26px;
+
+    }
+
+}
+
+@media(max-width:480px){
+
+    .container{
+
+        padding:18px;
+
+    }
+
+    .card{
+
+        padding:24px;
+
+        border-radius:14px;
+
+    }
+
+    .topo h1{
+
+        font-size:22px;
+
+    }
+
+    .grupo span{
+
+        font-size:16px;
+
+    }
+
+}
