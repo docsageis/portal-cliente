@@ -7,6 +7,7 @@ let assinaturaAtual = "";
 document.addEventListener("DOMContentLoaded", iniciarPortal);
 
 async function iniciarPortal() {
+
     assinaturaAtual = obterAssinatura();
 
     if (!assinaturaAtual) {
@@ -14,28 +15,43 @@ async function iniciarPortal() {
     }
 
     try {
+
         const dados = await consultarPortal(assinaturaAtual);
 
         if (!dados.ok) {
-            return mostrarErro(dados.mensagem || "Assinatura não localizada.");
+            return mostrarErro(
+                dados.mensagem || "Assinatura não localizada."
+            );
         }
 
         preencherTela(dados);
+
         configurarEventos();
 
-        if ((dados.aceite || "").toUpperCase() === "ACEITO") {
+        // Se o aceite não puder mais ser realizado,
+        // oculta toda a área de aceite.
+        if (!dados.podeAceitar) {
 
             document.getElementById("areaAceite").style.display = "none";
 
-            mostrarSucesso("Esta assinatura já foi realizada anteriormente."
+            mostrarSucesso(
+                dados.motivoBloqueio ||
+                "Esta assinatura já foi realizada anteriormente."
             );
 
         }
 
-    } catch (e) {
-        console.error(e);
-        mostrarErro("Não foi possível comunicar com o servidor.");
     }
+    catch (e) {
+
+        console.error(e);
+
+        mostrarErro(
+            "Não foi possível comunicar com o servidor."
+        );
+
+    }
+
 }
 
 async function consultarPortal(assinatura) {
