@@ -103,8 +103,6 @@ async function consultarPortal() {
         const dados =
             await resposta.json();
 
-        console.log(dados);
-
         preencherTela(dados);
 
     }
@@ -120,7 +118,7 @@ async function consultarPortal() {
 }
 
 function preencherTela(dados) {
- console.log("ENTROU NA preencherTela");
+ 
     if (!dados.ok) {
 
         alert(dados.mensagem);
@@ -142,36 +140,33 @@ function preencherTela(dados) {
     document.getElementById("pacote").textContent =
         dados.pacote;
 
-        console.log("PASSOU PACOTE");
-
     // Carrega os documentos conforme a versão
 
     const versao = dados.versaoDocs || "1.0";
     const pasta = `documentos/${versao}/`;
 
     document.getElementById("pdfTermos").src =
-        pasta + "termos-de-uso-rmc-da-doc-001.pdf";
+        pasta + "Termos de Uso RMC.pdf";
 
     document.getElementById("downloadTermos").href =
-        pasta + "termos-de-uso-rmc-da-doc-001.pdf";
+        pasta + "Termos de Uso RMC.pdf";
 
     document.getElementById("pdfContrato").src =
-        pasta + "contrato-rmc-da-doc-002.pdf";
+        pasta + "Contrato RMC.pdf";
 
     document.getElementById("downloadContrato").href =
-        pasta + "contrato-rmc-da-doc-002.pdf";
+        pasta + "Contrato RMC.pdf";
 
     document.getElementById("pdfLgpd").src =
-        pasta + "termos-lgpd-rmc-da-doc-003.pdf";
+        pasta + "Politica de Privacidade RMC - LGPD.pdf";
 
     document.getElementById("downloadLgpd").href =
-        pasta + "termos-lgpd-rmc-da-doc-003.pdf";
-console.log("PASSOU PDF");
+        pasta + "Politica de Privacidade RMC - LGPD.pdf";
+
     // Status
 
     const status = document.getElementById("status");
-console.log("campoDataAceite =", document.getElementById("campoDataAceite"));
-console.log("mensagemAceite =", document.getElementById("mensagemAceite"));
+
     document.getElementById("campoDataAceite").style.display = "none";
 
     document.getElementById("mensagemAceite").style.display = "none";
@@ -185,7 +180,7 @@ console.log("mensagemAceite =", document.getElementById("mensagemAceite"));
     ckFinal.checked = false;
 
     btn.disabled = true;
-    console.log("ANTES STATUS");
+    
     if (dados.podeAceitar) {
 
         status.innerHTML =
