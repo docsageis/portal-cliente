@@ -59,8 +59,13 @@ const URL_API =
 
 function obterAssinaturaURL() {
 
+    console.log(window.location.href);
+    console.log(window.location.search);
+
     const parametros =
         new URLSearchParams(window.location.search);
+
+    console.log(parametros.get("assinatura"));
 
     return parametros.get("assinatura") || "";
 
