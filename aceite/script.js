@@ -168,21 +168,10 @@ function preencherTela(dados) {
         pasta + "termos-lgpd-rmc-da-doc-003.pdf";
 console.log("PASSOU PDF");
     // Status
-console.log("status", document.getElementById("status"));
 
-console.log("campoDataAceite", document.getElementById("campoDataAceite"));
-
-console.log("mensagemAceite", document.getElementById("mensagemAceite"));
-
-console.log("ckTermos", document.getElementById("ckTermos"));
-
-console.log("ckContrato", document.getElementById("ckContrato"));
-
-console.log("ckLgpd", document.getElementById("ckLgpd"));
-
-console.log("ckFinal", document.getElementById("ckFinal"));
     const status = document.getElementById("status");
-
+console.log("campoDataAceite =", document.getElementById("campoDataAceite"));
+console.log("mensagemAceite =", document.getElementById("mensagemAceite"));
     document.getElementById("campoDataAceite").style.display = "none";
 
     document.getElementById("mensagemAceite").style.display = "none";
