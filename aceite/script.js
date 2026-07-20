@@ -120,7 +120,7 @@ async function consultarPortal() {
 }
 
 function preencherTela(dados) {
-
+ console.log("ENTROU NA preencherTela");
     if (!dados.ok) {
 
         alert(dados.mensagem);
@@ -141,6 +141,8 @@ function preencherTela(dados) {
 
     document.getElementById("pacote").textContent =
         dados.pacote;
+
+        console.log("PASSOU PACOTE");
 
     // Carrega os documentos conforme a versão
 
@@ -164,7 +166,7 @@ function preencherTela(dados) {
 
     document.getElementById("downloadLgpd").href =
         pasta + "termos-lgpd-rmc-da-doc-003.pdf";
-
+console.log("PASSOU PDF");
     // Status
 
     const status = document.getElementById("status");
@@ -182,7 +184,7 @@ function preencherTela(dados) {
     ckFinal.checked = false;
 
     btn.disabled = true;
-    
+    console.log("ANTES STATUS");
     if (dados.podeAceitar) {
 
         status.innerHTML =
@@ -260,8 +262,6 @@ btn.addEventListener("click", async () => {
             },
 
             body: JSON.stringify({
-
-                aceite: true,
 
                 assinatura: obterAssinaturaURL()
 
