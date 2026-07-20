@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Aceite dos Documentos | RMC DocsÁgeis</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- Cabeçalho -->
+
+        <header>
+
+            <img src="assets/logo.png" alt="DocsÁgeis" class="logo">
+
+            <h1>Aceite dos Documentos</h1>
+
+            <p>
+                Leia atentamente os documentos abaixo antes de concluir a ativação da sua licença.
+            </p>
+
+        </header>
+
+        <!-- Dados da licença -->
+
+        <section class="dados">
+
+            <div class="campo">
+
+                <span>Cliente</span>
+                <strong id="cliente">Carregando...</strong>
+
+            </div>
+
+            <div class="campo">
+
+                <span>Licença</span>
+                <strong id="licenca">Carregando...</strong>
+
+            </div>
+
+            <div class="campo">
+
+                <span>Plano</span>
+                <strong id="plano">Carregando...</strong>
+
+            </div>
+
+            <div class="campo">
+
+                <span>Pacote</span>
+                <strong id="pacote">Carregando...</strong>
+
+            </div>
+
+        </section>
+
+        <!-- Abas -->
+
+        <nav class="tabs">
+
+            <button class="tab active" data-tab="termos">
+                Termos de Uso
+            </button>
+
+            <button class="tab" data-tab="contrato">
+                Contrato RMC
+            </button>
+
+            <button class="tab" data-tab="lgpd">
+                Termos LGPD
+            </button>
+
+        </nav>
+
+        <!-- Documento 1 -->
+
+        <section id="termos" class="conteudo ativo">
+
+            <iframe src="documentos/1.0/termos-de-uso-rmc-da-doc-001.pdf"></iframe>
+
+            <label>
+
+                <input type="checkbox" id="ckTermos">
+
+                Confirmo que li este documento.
+
+            </label>
+
+        </section>
+
+        <!-- Documento 2 -->
+
+        <section id="contrato" class="conteudo">
+
+            <iframe src="documentos/1.0/contrato-rmc-da-doc-002.pdf"></iframe>
+            <label>
+
+                <input type="checkbox" id="ckContrato">
+
+                Confirmo que li este documento.
+
+            </label>
+
+        </section>
+
+        <!-- Documento 3 -->
+
+        <section id="lgpd" class="conteudo">
+
+            <iframe src="documentos/1.0/termos-lgpd-rmc-da-doc-003.pdf"></iframe>
+
+            <label>
+
+                <input type="checkbox" id="ckLgpd">
+
+                Confirmo que li este documento.
+
+            </label>
+
+        </section>
+
+        <!-- Aceite Final -->
+
+        <section class="aceite">
+
+            <label>
+
+                <input type="checkbox" id="ckFinal">
+
+                Declaro que li todos os documentos e concordo integralmente com seus termos.
+
+            </label>
+
+            <button id="btnAceitar" disabled>
+
+                ACEITAR DOCUMENTOS
+
+            </button>
+
+        </section>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
