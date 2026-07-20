@@ -62,6 +62,20 @@
 
             </div>
 
+            <div class="campo">
+
+                <span>Status</span>
+                <strong id="status">Carregando...</strong>
+
+            </div>
+
+            <div class="campo" id="campoDataAceite" style="display:none;">
+
+                <span>Data do Aceite</span>
+                <strong id="dataAceite"></strong>
+
+            </div>
+
         </section>
 
         <!-- Abas -->
@@ -86,7 +100,23 @@
 
         <section id="termos" class="conteudo ativo">
 
-            <iframe src="documentos/1.0/termos-de-uso-rmc-da-doc-001.pdf"></iframe>
+            <div class="cabecalho-documento">
+
+                <h3>Termos de Uso</h3>
+
+                <a
+                    id="downloadTermos"
+                    class="btn-download"
+                    href="#"
+                    target="_blank">
+
+                    ⬇ Baixar PDF
+
+                </a>
+
+            </div>
+
+            <iframe id="pdfTermos"></iframe>
 
             <label>
 
@@ -98,11 +128,26 @@
 
         </section>
 
-        <!-- Documento 2 -->
-
         <section id="contrato" class="conteudo">
 
-            <iframe src="documentos/1.0/contrato-rmc-da-doc-002.pdf"></iframe>
+            <div class="cabecalho-documento">
+
+                <h3>Contrato de Assinatura</h3>
+
+                <a
+                    id="downloadContrato"
+                    class="btn-download"
+                    href="#"
+                    target="_blank">
+
+                    ⬇ Baixar PDF
+
+                </a>
+
+            </div>
+
+            <iframe id="pdfContrato"></iframe>
+
             <label>
 
                 <input type="checkbox" id="ckContrato">
@@ -113,11 +158,25 @@
 
         </section>
 
-        <!-- Documento 3 -->
-
         <section id="lgpd" class="conteudo">
 
-            <iframe src="documentos/1.0/termos-lgpd-rmc-da-doc-003.pdf"></iframe>
+            <div class="cabecalho-documento">
+
+                <h3>Política de Privacidade (LGPD)</h3>
+
+                <a
+                    id="downloadLgpd"
+                    class="btn-download"
+                    href="#"
+                    target="_blank">
+
+                    ⬇ Baixar PDF
+
+                </a>
+
+            </div>
+
+            <iframe id="pdfLgpd"></iframe>
 
             <label>
 

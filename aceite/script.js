@@ -124,10 +124,11 @@ function preencherTela(dados) {
     if (!dados.ok) {
 
         alert(dados.mensagem);
-
         return;
 
     }
+
+    // Dados do cliente
 
     document.getElementById("cliente").textContent =
         dados.cliente;
@@ -140,6 +141,101 @@ function preencherTela(dados) {
 
     document.getElementById("pacote").textContent =
         dados.pacote;
+
+    // Carrega os documentos conforme a versão
+
+    const versao = dados.versaoDocs || "1.0";
+    const pasta = `documentos/${versao}/`;
+
+    document.getElementById("pdfTermos").src =
+        pasta + "termos-de-uso-rmc-da-doc-001.pdf";
+
+    document.getElementById("downloadTermos").href =
+        pasta + "termos-de-uso-rmc-da-doc-001.pdf";
+
+    document.getElementById("pdfContrato").src =
+        pasta + "contrato-rmc-da-doc-002.pdf";
+
+    document.getElementById("downloadContrato").href =
+        pasta + "contrato-rmc-da-doc-002.pdf";
+
+    document.getElementById("pdfLgpd").src =
+        pasta + "termos-lgpd-rmc-da-doc-003.pdf";
+
+    document.getElementById("downloadLgpd").href =
+        pasta + "termos-lgpd-rmc-da-doc-003.pdf";
+
+    // Status
+
+    const status = document.getElementById("status");
+
+    document.getElementById("campoDataAceite").style.display = "none";
+
+    document.getElementById("mensagemAceite").style.display = "none";
+    
+    ckTermos.checked = false;
+
+    ckContrato.checked = false;
+
+    ckLgpd.checked = false;
+
+    ckFinal.checked = false;
+
+    btn.disabled = true;
+    
+    if (dados.podeAceitar) {
+
+        status.innerHTML =
+            '<span class="status pendente">PENDENTE DE ACEITE</span>';
+
+    } else {
+
+        status.innerHTML =
+            '<span class="status aceito">ACEITO</span>';
+
+    }
+
+    // Estado padrão da tela
+    document.getElementById("ckTermos").parentElement.style.display = "";
+
+    document.getElementById("ckContrato").parentElement.style.display = "";
+
+    document.getElementById("ckLgpd").parentElement.style.display = "";
+
+    document.getElementById("ckFinal").parentElement.style.display = "";
+
+    document.getElementById("btnAceitar").style.display = "block";
+
+    // Se o aceite já foi realizado
+
+    if (!dados.podeAceitar) {
+
+        document.getElementById("ckTermos").parentElement.style.display = "none";
+
+        document.getElementById("ckContrato").parentElement.style.display = "none";
+
+        document.getElementById("ckLgpd").parentElement.style.display = "none";
+
+        document.getElementById("ckFinal").parentElement.style.display = "none";
+
+        document.getElementById("btnAceitar").style.display = "none";
+
+        document.getElementById("campoDataAceite").style.display = "block";
+
+        document.getElementById("mensagemAceite").style.display = "block";
+
+        if (dados.dataAceite) {
+
+            document.getElementById("dataAceite").textContent =
+                new Date(dados.dataAceite).toLocaleString("pt-BR");
+
+        } else {
+
+            document.getElementById("dataAceite").textContent = "-";
+
+        }
+
+    }
 
 }
 
@@ -177,9 +273,9 @@ btn.addEventListener("click", async () => {
 
         if (dados.ok) {
 
-            alert("Aceite registrado com sucesso!");
+            await consultarPortal();
 
-            location.reload();
+            alert("Aceite registrado com sucesso!");
 
         } else {
 
