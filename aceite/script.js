@@ -149,8 +149,54 @@ consultarPortal();
 // BOTÃO
 // ===============================
 
-btn.addEventListener("click", () => {
+btn.addEventListener("click", async () => {
 
-    alert("Pronto! Na próxima etapa este botão enviará o aceite ao servidor.");
+    try {
+
+        btn.disabled = true;
+
+        const resposta = await fetch(URL_API, {
+
+            method: "POST",
+
+            headers: {
+                "Content-Type": "application/json"
+            },
+
+            body: JSON.stringify({
+
+                aceite: true,
+
+                assinatura: obterAssinaturaURL()
+
+            })
+
+        });
+
+        const dados = await resposta.json();
+
+        if (dados.ok) {
+
+            alert("Aceite registrado com sucesso!");
+
+            location.reload();
+
+        } else {
+
+            alert(dados.mensagem);
+
+            btn.disabled = false;
+
+        }
+
+    } catch (erro) {
+
+        console.error(erro);
+
+        alert("Erro ao registrar o aceite.");
+
+        btn.disabled = false;
+
+    }
 
 });
