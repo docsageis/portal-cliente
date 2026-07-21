@@ -140,57 +140,25 @@ function preencherTela(dados) {
     document.getElementById("pacote").textContent =
         dados.pacote;
 
+    /// ===============================
+    // CARREGA OS PDFs
     // ===============================
-// CARREGA OS PDFs
-// ===============================
 
-const versao = dados.versaoDocs || "1.0";
+    const versao = dados.versaoDocs || "1.0";
+    const pasta = `documentos/${versao}/`;
 
-const base =
-    window.location.origin +
-    "/aceite/documentos/" +
-    versao +
-    "/";
+    const pdfTermos = `${pasta}Termos de Uso RMC.pdf`;
+    const pdfContrato = `${pasta}Contrato RMC.pdf`;
+    const pdfLgpd = `${pasta}Politica de Privacidade RMC - LGPD.pdf`;
 
-carregarPdf(
-    "pdfTermos",
-    "downloadTermos",
-    "Termos de Uso RMC.pdf"
-);
+    document.getElementById("pdfTermos").src = pdfTermos;
+    document.getElementById("downloadTermos").href = pdfTermos;
 
-carregarPdf(
-    "pdfContrato",
-    "downloadContrato",
-    "Contrato RMC.pdf"
-);
+    document.getElementById("pdfContrato").src = pdfContrato;
+    document.getElementById("downloadContrato").href = pdfContrato;
 
-carregarPdf(
-    "pdfLgpd",
-    "downloadLgpd",
-    "Politica de Privacidade RMC - LGPD.pdf"
-);
-
-function carregarPdf(idIframe, idDownload, arquivo) {
-
-    const url = base + encodeURIComponent(arquivo);
-
-    console.log("Carregando:", url);
-
-    const iframe = document.getElementById(idIframe);
-
-    iframe.removeAttribute("src");
-
-    iframe.src = "about:blank";
-
-    setTimeout(() => {
-
-        iframe.src = url;
-
-    }, 50);
-
-    document.getElementById(idDownload).href = url;
-
-}
+    document.getElementById("pdfLgpd").src = pdfLgpd;
+    document.getElementById("downloadLgpd").href = pdfLgpd;
 
     const status = document.getElementById("status");
 
