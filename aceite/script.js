@@ -140,9 +140,9 @@ function preencherTela(dados) {
     document.getElementById("pacote").textContent =
         dados.pacote;
 
-    /// ===============================
+    /// =======================
     // CARREGA OS PDFs
-    // ===============================
+    // ========================
 
     const versao = dados.versaoDocs || "1.0";
     const pasta = `documentos/${versao}/`;
@@ -165,6 +165,8 @@ function preencherTela(dados) {
     document.getElementById("campoDataAceite").style.display = "none";
 
     document.getElementById("mensagemAceite").style.display = "none";
+
+    document.getElementById("areaDownloadLicenca").style.display = "none";
     
     ckTermos.checked = false;
 
@@ -216,6 +218,32 @@ function preencherTela(dados) {
         document.getElementById("campoDataAceite").style.display = "block";
 
         document.getElementById("mensagemAceite").style.display = "block";
+        
+        // DOWNLOAD DA LICENÇA
+
+        const areaDownload =
+            document.getElementById("areaDownloadLicenca");
+
+        const textoPrazo =
+            document.getElementById("textoPrazoDownload");
+
+        if (dados.podeBaixar) {
+
+            areaDownload.style.display = "block";
+
+            if (dados.prazoDownload) {
+
+                textoPrazo.textContent =
+                    "Licença disponível para download até " +
+                    new Date(dados.prazoDownload).toLocaleString("pt-BR");
+
+            }
+
+        } else {
+
+            areaDownload.style.display = "none";
+
+        }
 
         if (dados.dataAceite) {
 
