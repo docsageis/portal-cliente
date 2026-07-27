@@ -166,6 +166,8 @@ function preencherTela(dados) {
 
     document.getElementById("mensagemAceite").style.display = "none";
 
+    document.getElementById("mensagemDownloadExpirado").style.display = "none";
+
     document.getElementById("areaDownloadLicenca").style.display = "none";
     
     ckTermos.checked = false;
@@ -227,6 +229,13 @@ function preencherTela(dados) {
         const textoPrazo =
             document.getElementById("textoPrazoDownload");
 
+        const msgDownload =
+            document.getElementById("mensagemDownloadExpirado");
+
+        // Esconde ambos inicialmente
+        areaDownload.style.display = "none";
+        msgDownload.style.display = "none";
+
         if (dados.podeBaixar) {
 
             areaDownload.style.display = "block";
@@ -237,11 +246,16 @@ function preencherTela(dados) {
                     "Licença disponível para download até " +
                     new Date(dados.prazoDownload).toLocaleString("pt-BR");
 
+            } else {
+
+                textoPrazo.textContent = "";
+
             }
 
         } else {
 
-            areaDownload.style.display = "none";
+            // Mostra a mensagem quando o prazo expirou
+            msgDownload.style.display = "block";
 
         }
 
