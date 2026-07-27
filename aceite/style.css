@@ -281,17 +281,22 @@ label input{
 .status{
 
     display:inline-flex;
+
     align-items:center;
+
     justify-content:center;
 
-    padding:7px 16px;
+    width:100%;
+
+    padding:10px 16px;
 
     border-radius:30px;
 
-    font-size:13px;
-    font-weight:700;
+    font-size:17px;
 
-    letter-spacing:.4px;
+    font-weight:800;
+
+    letter-spacing:.5px;
 
 }
 
@@ -354,6 +359,20 @@ label input{
 }
 
 /* ==========================
+   DATA DO ACEITE
+========================== */
+
+#dataAceite{
+
+    font-size:20px;
+
+    font-weight:700;
+
+    color:var(--texto);
+
+}
+
+/* ==========================
    DOWNLOAD LICENÇA
 ========================== */
 
@@ -387,9 +406,9 @@ label input{
 
     width:100%;
 
-    max-width:420px;
+    max-width:330px;
 
-    padding:16px 24px;
+    padding:14px 20px;
 
     border:none;
 
@@ -399,7 +418,7 @@ label input{
 
     color:#FFF;
 
-    font-size:22px;
+    font-size:18px;
 
     font-weight:800;
 
@@ -416,19 +435,5 @@ label input{
     transform:translateY(-2px);
 
     box-shadow:0 8px 24px rgba(22,163,74,.35);
-
-}
-
-.download-licenca p{
-
-    margin-top:14px;
-
-    font-size:17px;
-
-    font-weight:600;
-
-    color:#1F2937;
-
-    line-height:1.5;
 
 }
