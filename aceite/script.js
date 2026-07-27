@@ -162,11 +162,13 @@ function preencherTela(dados) {
 
     const status = document.getElementById("status");
 
-    document.getElementById("campoDataAceite").style.display = "none";
+    console.log("campoDataAceite:", document.getElementById("campoDataAceite"));
+console.log("mensagemAceite:", document.getElementById("mensagemAceite"));
+console.log("areaDownloadLicenca:", document.getElementById("areaDownloadLicenca"));
 
-    document.getElementById("mensagemAceite").style.display = "none";
-
-    document.getElementById("areaDownloadLicenca").style.display = "none";
+document.getElementById("campoDataAceite").style.display = "none";
+document.getElementById("mensagemAceite").style.display = "none";
+document.getElementById("areaDownloadLicenca").style.display = "none";
     
     ckTermos.checked = false;
 
