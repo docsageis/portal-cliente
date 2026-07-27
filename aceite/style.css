@@ -292,7 +292,7 @@ label input{
 
     border-radius:30px;
 
-    font-size:17px;
+    font-size:20px;
 
     font-weight:800;
 
@@ -364,7 +364,7 @@ label input{
 
 #dataAceite{
 
-    font-size:20px;
+    font-size:15px;
 
     font-weight:700;
 
@@ -409,6 +409,10 @@ label input{
     max-width:330px;
 
     padding:14px 20px;
+
+    margin-top:-6px;      /* sobe o botão */
+
+    margin-bottom:14px;   /* desce o texto */
 
     border:none;
 
