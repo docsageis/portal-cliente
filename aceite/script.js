@@ -102,7 +102,7 @@ async function consultarPortal() {
 
         const dados =
             await resposta.json();
-
+console.log(dados);
         preencherTela(dados);
 
     }
