@@ -245,6 +245,8 @@ function preencherTela(dados) {
 
         }
 
+        window.arquivoLicenca = dados.arquivoLicenca || "";
+
         if (dados.dataAceite) {
 
             document.getElementById("dataAceite").textContent =
@@ -317,3 +319,85 @@ btn.addEventListener("click", async () => {
     }
 
 });
+
+async function baixarLicenca() {
+
+    if (!window.arquivoLicenca) {
+
+        alert("Arquivo da licença não localizado.");
+
+        return;
+
+    }
+
+    try {
+
+        const resposta = await fetch(
+            "https://worker-portal.docsageis.workers.dev",
+            {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+
+                    portal: "DOWNLOAD_LICENCA",
+
+                    arquivo: window.arquivoLicenca
+
+                })
+            }
+        );
+
+        const dados = await resposta.json();
+
+        if (!dados.ok) {
+
+            alert(dados.mensagem);
+
+            return;
+
+        }
+
+        const blob = new Blob(
+            [dados.conteudo],
+            {
+                type: "text/plain"
+            }
+        );
+
+        const url = URL.createObjectURL(blob);
+
+        const a = document.createElement("a");
+
+        a.href = url;
+
+        a.download = dados.arquivo;
+
+        document.body.appendChild(a);
+
+        a.click();
+
+        a.remove();
+
+        URL.revokeObjectURL(url);
+
+    } catch (erro) {
+
+        alert("Erro ao baixar a licença.");
+
+        console.error(erro);
+
+    }
+
+}
+
+// ===============================
+// BOTÃO DOWNLOAD LICENÇA
+// ===============================
+
+const btnDownloadLicenca = document.getElementById("btnDownloadLicenca");
+
+if (btnDownloadLicenca) {
+    btnDownloadLicenca.addEventListener("click", baixarLicenca);
+}
