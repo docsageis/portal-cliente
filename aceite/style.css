@@ -359,11 +359,17 @@ label input{
 
 .download-licenca{
 
-    background: var(--azul-claro);
+    grid-column: span 2;
 
-    border-radius:10px;
+    background:#EEF6FF;
 
-    padding:15px;
+    border:2px solid var(--azul);
+
+    border-radius:12px;
+
+    padding:22px;
+
+    min-height:120px;
 
     display:flex;
 
@@ -375,31 +381,33 @@ label input{
 
     text-align:center;
 
-    min-height:86px;
-
 }
 
 .download-licenca button{
 
     width:100%;
 
+    max-width:420px;
+
+    padding:16px 24px;
+
     border:none;
 
-    border-radius:8px;
-
-    padding:12px 18px;
+    border-radius:10px;
 
     background:var(--verde);
 
     color:#FFF;
 
-    font-size:15px;
+    font-size:22px;
 
-    font-weight:700;
+    font-weight:800;
 
     cursor:pointer;
 
     transition:.25s;
+
+    box-shadow:0 5px 18px rgba(22,163,74,.25);
 
 }
 
@@ -407,14 +415,20 @@ label input{
 
     transform:translateY(-2px);
 
+    box-shadow:0 8px 24px rgba(22,163,74,.35);
+
 }
 
 .download-licenca p{
 
-    margin-top:10px;
+    margin-top:14px;
 
-    font-size:13px;
+    font-size:17px;
 
-    color:var(--cinza);
+    font-weight:600;
+
+    color:#1F2937;
+
+    line-height:1.5;
 
 }
