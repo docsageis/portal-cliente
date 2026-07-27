@@ -441,3 +441,45 @@ label input{
     box-shadow:0 8px 24px rgba(22,163,74,.35);
 
 }
+
+/* ==========================
+   DOWNLOAD EXPIRADO
+========================== */
+
+.mensagem-download{
+
+    margin:25px 40px;
+
+    padding:22px;
+
+    background:#FFF7ED;
+
+    border:1px solid #FDBA74;
+
+    border-left:6px solid #EA580C;
+
+    border-radius:12px;
+
+}
+
+.mensagem-download strong{
+
+    display:block;
+
+    margin-bottom:10px;
+
+    color:#C2410C;
+
+    font-size:18px;
+
+}
+
+.mensagem-download p{
+
+    color:#444;
+
+    line-height:1.7;
+
+    font-size:15px;
+
+}
